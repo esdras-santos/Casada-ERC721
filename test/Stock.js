@@ -1,0 +1,1 @@
+const Stock = artifacts.require("Stock")
