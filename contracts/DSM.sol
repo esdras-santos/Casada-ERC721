@@ -1,11 +1,11 @@
 pragma solidity ^0.5.0;
 
-import "./interfaces/ERC721.sol";
+import "./interfaces/IERC721.sol";
 import "./interfaces/ERC721Receiver.sol";
 import "./interfaces/extensions/ERC721Metadata.sol";
 import "./interfaces/extensions/ERC721Enumerable.sol";
 
-contract DSM is ERC721, ERC721Receiver, ERC721Metadata, ERC721Enumerable, ERC165{
+contract DSM is IERC721, ERC721Receiver, ERC721Metadata, IERC165 /*ERC721Enumerable*/{
     string private _name;
     string private _symbol;
     uint256 private _totalSupply;
@@ -27,14 +27,11 @@ contract DSM is ERC721, ERC721Receiver, ERC721Metadata, ERC721Enumerable, ERC165
     mapping(address => uint256[]) private _ownedTokens;
     mapping (address => mapping(address => bool)) private _authorizedOperator;
 
-    constructor(string memory nm, string memory sym, uint256 ts) public {
-        _name = nm;
-        _symbol = sym;
-        _totalSupply = ts;
-        registerInterface(_InterfaceIdERC721);
+    constructor() public {
+        _registerInterface(_InterfaceIdERC721);
     }
 
-    function _onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external returns(bytes4){
+    function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes calldata _data) external returns(bytes4){
         return bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"));
     }
 
@@ -55,19 +52,19 @@ contract DSM is ERC721, ERC721Receiver, ERC721Metadata, ERC721Enumerable, ERC165
         return _symbol;
     }
 
-    function totalSupply() external view returns (uint256){
-        return _totalSupply;
-    }
+    // function totalSupply() external view returns (uint256){
+    //     return _totalSupply;
+    // }
 
-    function tokenByIndex(uint256 _index) external view returns (uint256){
-        require(_index < this.totalSupply());
-        return _tokenIndex[_index];
-    }
+    // function tokenByIndex(uint256 _index) external view returns (uint256){
+    //     require(_index < totalSupply());
+    //     return _tokenIndex[_index];
+    // }
 
-    function tokenOfOwnerByIndex(address owner, uint256 _index) external view returns (uint256){
-        require(_index < this.balanceOf(owner));
-        return _ownedTokens[owner][_index];
-    }
+    // function tokenOfOwnerByIndex(address owner, uint256 _index) external view returns (uint256){
+    //     require(_index < balanceOf(owner));
+    //     return _ownedTokens[owner][_index];
+    // }
 
 
     function tokenURI(uint256 _tokenId) external view returns (string memory){
@@ -80,70 +77,75 @@ contract DSM is ERC721, ERC721Receiver, ERC721Metadata, ERC721Enumerable, ERC165
         _tokenURI[_tokenId] = _uri;
     }
 
-    function balanceOf(address owner) external view returns (uint256){
+    function balanceOf(address owner) public view returns (uint256){
         require(owner != address(0));
         return _balance[owner];
     }
 
-    function ownerOf(uint256 _tokenId) external view returns (address){
+    function ownerOf(uint256 _tokenId) public view returns (address){
         address owner = _owner[_tokenId];
         require(owner != address(0));
         return owner;
     }
 
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes calldata data) external payable {
-        this._transfer(_from, _to, _tokenId);
-        require(checkOnERC721Received(_from,_to, _tokenId, data));
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes memory _data) public{
+        require(_isApprovedOrOwner(msg.sender,_tokenId), "not the owner or approved");
+        _transfer(_from, _to, _tokenId);
+        require(_checkOnERC721Received(_from,_to, _tokenId, _data));
     }
 
 
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable {
-        this.safeTransferFrom(_from,_to,_tokenId, " ");
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) public{
+        safeTransferFrom(_from,_to,_tokenId, " ");
     }
 
-    function _transfer(address _from, address _to, uint256 _tokenId) internal payable{
-        require(this.ownerOf(_tokenId) == msg.sender || _authorizedOperator[_from][msg.sender] == true || this.getApproved(_tokenId) == msg.sender);
-        require(this.ownerOf(_tokenId) == _from);
+    function _transfer(address _from, address _to, uint256 _tokenId) internal{
+        address owner = ownerOf(_tokenId);
+        require(owner == _from);
         require(_to != address(0));
-        require(this.ownerOf(_tokenId) != address(0));
-        this.approve(address(0),_tokenId);
+        _approvedAddress[_tokenId] = address(0);
         _balance[_from] -= 1;
         _balance[_to] += 1;
         _owner[_tokenId] = _to;
         emit Transfer(_from,_to,_tokenId);
     }
 
-    function transferFrom(address _from, address _to, uint256 _tokenId) external payable{
-        this._transfer(_from, _to, _tokenId);
+    function _isApprovedOrOwner(address _spender, uint256 _tokenId) internal view returns (bool) {
+        address owner = ownerOf(_tokenId);
+        require(owner != address(0));
+        return (_spender == owner || isApprovedForAll(owner, msg.sender) == true || getApproved(_tokenId) == msg.sender);
     }
 
-    function approve(address _approved, uint256 _tokenId) external payable{
+    function transferFrom(address _from, address _to, uint256 _tokenId) public{
+        _transfer(_from, _to, _tokenId);
+    }
+
+    function approve(address _approved, uint256 _tokenId) public{
         require(_approved != address(0));
-        require(this.ownerOf(_tokenId) == msg.sender || _authorizedOperator[msg.sender][_approved] == true);
+        require(ownerOf(_tokenId) == msg.sender || isApprovedForAll(msg.sender, _approved) == true);
         _approvedAddress[_tokenId] = _approved;
-        emit Approval(this.ownerOf(_tokenId), _approved, _tokenId);
+        emit Approval(ownerOf(_tokenId), _approved, _tokenId);
 
     }
 
     //not finished yet
-    function _mint(string memory nm, string memory sym, uint256 tS) internal{
-        _name = nm;
-        _symbol = sym;
-        _totalSupply = tS;
+    function _mint(address _to, uint256 _tokenId) internal{
+        _balance[_to] += 1;
+        _owner[_tokenId] = _to;
     }
 
-    function setApprovalForAll(address _operator, bool _approved) external{
+    function setApprovalForAll(address _operator, bool _approved) public{
         require(_operator != msg.sender);
         _authorizedOperator[msg.sender][_operator] = _approved;
         emit ApprovalForAll(msg.sender, _operator, _approved);
     }
 
-    function getApproved(uint256 _tokenId) external view returns (address){
-        require(this.ownerOf(_tokenId) != address(0));
+    function getApproved(uint256 _tokenId) public view returns (address){
+        require(ownerOf(_tokenId) != address(0));
         return _approvedAddress[_tokenId];
     }
 
-    function isApprovedForAll(address owner, address _operator) external view returns (bool){
+    function isApprovedForAll(address owner, address _operator) public view returns (bool){
         return _authorizedOperator[owner][_operator];
     }
 
