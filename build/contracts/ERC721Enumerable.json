@@ -64,25 +64,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"tokenByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"tokenOfOwnerByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"See https://eips.ethereum.org/EIPS/eip-721  Note: the ERC-165 identifier for this interface is 0x780e9d63.\",\"methods\":{\"tokenByIndex(uint256)\":{\"details\":\"Throws if `_index` >= `totalSupply()`.\",\"params\":{\"_index\":\"A counter less than `totalSupply()`\"},\"return\":\"The token identifier for the `_index`th NFT,  (sort order not specified)\"},\"tokenOfOwnerByIndex(address,uint256)\":{\"details\":\"Throws if `_index` >= `balanceOf(_owner)` or if  `_owner` is the zero address, representing invalid NFTs.\",\"params\":{\"_index\":\"A counter less than `balanceOf(_owner)`\",\"_owner\":\"An address where we are interested in NFTs owned by them\"},\"return\":\"The token identifier for the `_index`th NFT assigned to `_owner`,   (sort order not specified)\"},\"totalSupply()\":{\"return\":\"A count of valid NFTs tracked by this contract, where each one of  them has an assigned and queryable owner not equal to the zero address\"}},\"title\":\"ERC-721 Non-Fungible Token Standard, optional enumeration extension\"},\"userdoc\":{\"methods\":{\"tokenByIndex(uint256)\":{\"notice\":\"Enumerate valid NFTs\"},\"tokenOfOwnerByIndex(address,uint256)\":{\"notice\":\"Enumerate NFTs assigned to an owner\"},\"totalSupply()\":{\"notice\":\"Count NFTs tracked by this contract\"}}}},\"settings\":{\"compilationTarget\":{\"/home/esdras/Documents/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol\":\"ERC721Enumerable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/esdras/Documents/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol\":{\"keccak256\":\"0xaebcdc7d200690f29f0e2b4d7902434841c0338e124d1981b09e25b717a105cf\",\"urls\":[\"bzz-raw://2c760898aca4f3d41df517e1cdc1f493d1f72a34c2c4422e66e04ab2bc3d8132\",\"dweb:/ipfs/QmdL9X5qiHiP1zWES8h7BAFycpLt8WVAEvuN17umKFqEbZ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"tokenByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"tokenOfOwnerByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"See https://eips.ethereum.org/EIPS/eip-721  Note: the ERC-165 identifier for this interface is 0x780e9d63.\",\"methods\":{\"tokenByIndex(uint256)\":{\"details\":\"Throws if `_index` >= `totalSupply()`.\",\"params\":{\"_index\":\"A counter less than `totalSupply()`\"},\"return\":\"The token identifier for the `_index`th NFT,  (sort order not specified)\"},\"tokenOfOwnerByIndex(address,uint256)\":{\"details\":\"Throws if `_index` >= `balanceOf(_owner)` or if  `_owner` is the zero address, representing invalid NFTs.\",\"params\":{\"_index\":\"A counter less than `balanceOf(_owner)`\",\"_owner\":\"An address where we are interested in NFTs owned by them\"},\"return\":\"The token identifier for the `_index`th NFT assigned to `_owner`,   (sort order not specified)\"},\"totalSupply()\":{\"return\":\"A count of valid NFTs tracked by this contract, where each one of  them has an assigned and queryable owner not equal to the zero address\"}},\"title\":\"ERC-721 Non-Fungible Token Standard, optional enumeration extension\"},\"userdoc\":{\"methods\":{\"tokenByIndex(uint256)\":{\"notice\":\"Enumerate valid NFTs\"},\"tokenOfOwnerByIndex(address,uint256)\":{\"notice\":\"Enumerate NFTs assigned to an owner\"},\"totalSupply()\":{\"notice\":\"Count NFTs tracked by this contract\"}}}},\"settings\":{\"compilationTarget\":{\"/C/Users/esdra/Downloads/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol\":\"ERC721Enumerable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/esdra/Downloads/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol\":{\"keccak256\":\"0x25f5304de6b28d193d051fa875df19e318133f86bdb53c94869fe4f8a3ee95c0\",\"urls\":[\"bzz-raw://e1fc0ad3d82c48b3d2e7cd6403342b9702085fe48a8f3c5c3896805d3bc8c88b\",\"dweb:/ipfs/QmYnbpRtC9DYsZGe95jscb94FHMCJnKTuZEVjWmfFNmKog\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\n\n/// @title ERC-721 Non-Fungible Token Standard, optional enumeration extension\n/// @dev See https://eips.ethereum.org/EIPS/eip-721\n///  Note: the ERC-165 identifier for this interface is 0x780e9d63.\ninterface ERC721Enumerable /* is ERC721 */ {\n    /// @notice Count NFTs tracked by this contract\n    /// @return A count of valid NFTs tracked by this contract, where each one of\n    ///  them has an assigned and queryable owner not equal to the zero address\n    function totalSupply() external view returns (uint256);\n\n    /// @notice Enumerate valid NFTs\n    /// @dev Throws if `_index` >= `totalSupply()`.\n    /// @param _index A counter less than `totalSupply()`\n    /// @return The token identifier for the `_index`th NFT,\n    ///  (sort order not specified)\n    function tokenByIndex(uint256 _index) external view returns (uint256);\n\n    /// @notice Enumerate NFTs assigned to an owner\n    /// @dev Throws if `_index` >= `balanceOf(_owner)` or if\n    ///  `_owner` is the zero address, representing invalid NFTs.\n    /// @param _owner An address where we are interested in NFTs owned by them\n    /// @param _index A counter less than `balanceOf(_owner)`\n    /// @return The token identifier for the `_index`th NFT assigned to `_owner`,\n    ///   (sort order not specified)\n    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);\n}",
-  "sourcePath": "/home/esdras/Documents/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol",
+  "source": "pragma solidity ^0.5.0;\r\n\r\n/// @title ERC-721 Non-Fungible Token Standard, optional enumeration extension\r\n/// @dev See https://eips.ethereum.org/EIPS/eip-721\r\n///  Note: the ERC-165 identifier for this interface is 0x780e9d63.\r\ninterface ERC721Enumerable /* is ERC721 */ {\r\n    /// @notice Count NFTs tracked by this contract\r\n    /// @return A count of valid NFTs tracked by this contract, where each one of\r\n    ///  them has an assigned and queryable owner not equal to the zero address\r\n    function totalSupply() external view returns (uint256);\r\n\r\n    /// @notice Enumerate valid NFTs\r\n    /// @dev Throws if `_index` >= `totalSupply()`.\r\n    /// @param _index A counter less than `totalSupply()`\r\n    /// @return The token identifier for the `_index`th NFT,\r\n    ///  (sort order not specified)\r\n    function tokenByIndex(uint256 _index) external view returns (uint256);\r\n\r\n    /// @notice Enumerate NFTs assigned to an owner\r\n    /// @dev Throws if `_index` >= `balanceOf(_owner)` or if\r\n    ///  `_owner` is the zero address, representing invalid NFTs.\r\n    /// @param _owner An address where we are interested in NFTs owned by them\r\n    /// @param _index A counter less than `balanceOf(_owner)`\r\n    /// @return The token identifier for the `_index`th NFT assigned to `_owner`,\r\n    ///   (sort order not specified)\r\n    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);\r\n}",
+  "sourcePath": "C:\\Users\\esdra\\Downloads\\NFT_ERC721_Full_Implementation\\contracts\\interfaces\\extensions\\ERC721Enumerable.sol",
   "ast": {
-    "absolutePath": "/home/esdras/Documents/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol",
+    "absolutePath": "/C/Users/esdra/Downloads/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol",
     "exportedSymbols": {
       "ERC721Enumerable": [
-        877
+        821
       ]
     },
-    "id": 878,
+    "id": 822,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 855,
+        "id": 799,
         "literals": [
           "solidity",
           "^",
@@ -98,9 +98,9 @@
         "contractKind": "interface",
         "documentation": "@title ERC-721 Non-Fungible Token Standard, optional enumeration extension\n @dev See https://eips.ethereum.org/EIPS/eip-721\n  Note: the ERC-165 identifier for this interface is 0x780e9d63.",
         "fullyImplemented": false,
-        "id": 877,
+        "id": 821,
         "linearizedBaseContracts": [
-          877
+          821
         ],
         "name": "ERC721Enumerable",
         "nodeType": "ContractDefinition",
@@ -108,29 +108,29 @@
           {
             "body": null,
             "documentation": "@notice Count NFTs tracked by this contract\n @return A count of valid NFTs tracked by this contract, where each one of\n  them has an assigned and queryable owner not equal to the zero address",
-            "id": 860,
+            "id": 804,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "totalSupply",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 856,
+              "id": 800,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "507:2:5"
+              "src": "516:2:5"
             },
             "returnParameters": {
-              "id": 859,
+              "id": 803,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 858,
+                  "id": 802,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 860,
-                  "src": "533:7:5",
+                  "scope": 804,
+                  "src": "542:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -138,10 +138,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 857,
+                    "id": 801,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "533:7:5",
+                    "src": "542:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -151,10 +151,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "532:9:5"
+              "src": "541:9:5"
             },
-            "scope": 877,
-            "src": "487:55:5",
+            "scope": 821,
+            "src": "496:55:5",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -162,23 +162,23 @@
           {
             "body": null,
             "documentation": "@notice Enumerate valid NFTs\n @dev Throws if `_index` >= `totalSupply()`.\n @param _index A counter less than `totalSupply()`\n @return The token identifier for the `_index`th NFT,\n  (sort order not specified)",
-            "id": 867,
+            "id": 811,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "tokenByIndex",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 863,
+              "id": 807,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 862,
+                  "id": 806,
                   "name": "_index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 867,
-                  "src": "814:14:5",
+                  "scope": 811,
+                  "src": "830:14:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -186,10 +186,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 861,
+                    "id": 805,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "814:7:5",
+                    "src": "830:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -199,19 +199,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "813:16:5"
+              "src": "829:16:5"
             },
             "returnParameters": {
-              "id": 866,
+              "id": 810,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 865,
+                  "id": 809,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 867,
-                  "src": "853:7:5",
+                  "scope": 811,
+                  "src": "869:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -219,10 +219,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 864,
+                    "id": 808,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "853:7:5",
+                    "src": "869:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -232,10 +232,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "852:9:5"
+              "src": "868:9:5"
             },
-            "scope": 877,
-            "src": "792:70:5",
+            "scope": 821,
+            "src": "808:70:5",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -243,23 +243,23 @@
           {
             "body": null,
             "documentation": "@notice Enumerate NFTs assigned to an owner\n @dev Throws if `_index` >= `balanceOf(_owner)` or if\n  `_owner` is the zero address, representing invalid NFTs.\n @param _owner An address where we are interested in NFTs owned by them\n @param _index A counter less than `balanceOf(_owner)`\n @return The token identifier for the `_index`th NFT assigned to `_owner`,\n   (sort order not specified)",
-            "id": 876,
+            "id": 820,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "tokenOfOwnerByIndex",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 872,
+              "id": 816,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 869,
+                  "id": 813,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 876,
-                  "src": "1336:14:5",
+                  "scope": 820,
+                  "src": "1361:14:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -267,10 +267,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 868,
+                    "id": 812,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1336:7:5",
+                    "src": "1361:7:5",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -282,11 +282,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 871,
+                  "id": 815,
                   "name": "_index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 876,
-                  "src": "1352:14:5",
+                  "scope": 820,
+                  "src": "1377:14:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -294,10 +294,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 870,
+                    "id": 814,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1352:7:5",
+                    "src": "1377:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -307,19 +307,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1335:32:5"
+              "src": "1360:32:5"
             },
             "returnParameters": {
-              "id": 875,
+              "id": 819,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 874,
+                  "id": 818,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 876,
-                  "src": "1391:7:5",
+                  "scope": 820,
+                  "src": "1416:7:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -327,10 +327,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 873,
+                    "id": 817,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1391:7:5",
+                    "src": "1416:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -340,27 +340,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1390:9:5"
+              "src": "1415:9:5"
             },
-            "scope": 877,
-            "src": "1307:93:5",
+            "scope": 821,
+            "src": "1332:93:5",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 878,
-        "src": "224:1178:5"
+        "scope": 822,
+        "src": "229:1199:5"
       }
     ],
-    "src": "0:1402:5"
+    "src": "0:1428:5"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/esdras/Documents/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol",
+      "absolutePath": "/C/Users/esdra/Downloads/NFT_ERC721_Full_Implementation/contracts/interfaces/extensions/ERC721Enumerable.sol",
       "exportedSymbols": {
         "ERC721Enumerable": [
-          877
+          821
         ]
       }
     },
@@ -374,7 +374,7 @@
             ".0"
           ]
         },
-        "id": 855,
+        "id": 799,
         "name": "PragmaDirective",
         "src": "0:23:5"
       },
@@ -390,10 +390,10 @@
           "documentation": "@title ERC-721 Non-Fungible Token Standard, optional enumeration extension\n @dev See https://eips.ethereum.org/EIPS/eip-721\n  Note: the ERC-165 identifier for this interface is 0x780e9d63.",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            877
+            821
           ],
           "name": "ERC721Enumerable",
-          "scope": 878
+          "scope": 822
         },
         "children": [
           {
@@ -407,7 +407,7 @@
                 null
               ],
               "name": "totalSupply",
-              "scope": 877,
+              "scope": 821,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -420,9 +420,9 @@
                   ]
                 },
                 "children": [],
-                "id": 856,
+                "id": 800,
                 "name": "ParameterList",
-                "src": "507:2:5"
+                "src": "516:2:5"
               },
               {
                 "children": [
@@ -430,7 +430,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 860,
+                      "scope": 804,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -443,24 +443,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 857,
+                        "id": 801,
                         "name": "ElementaryTypeName",
-                        "src": "533:7:5"
+                        "src": "542:7:5"
                       }
                     ],
-                    "id": 858,
+                    "id": 802,
                     "name": "VariableDeclaration",
-                    "src": "533:7:5"
+                    "src": "542:7:5"
                   }
                 ],
-                "id": 859,
+                "id": 803,
                 "name": "ParameterList",
-                "src": "532:9:5"
+                "src": "541:9:5"
               }
             ],
-            "id": 860,
+            "id": 804,
             "name": "FunctionDefinition",
-            "src": "487:55:5"
+            "src": "496:55:5"
           },
           {
             "attributes": {
@@ -473,7 +473,7 @@
                 null
               ],
               "name": "tokenByIndex",
-              "scope": 877,
+              "scope": 821,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -485,7 +485,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_index",
-                      "scope": 867,
+                      "scope": 811,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -498,19 +498,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 861,
+                        "id": 805,
                         "name": "ElementaryTypeName",
-                        "src": "814:7:5"
+                        "src": "830:7:5"
                       }
                     ],
-                    "id": 862,
+                    "id": 806,
                     "name": "VariableDeclaration",
-                    "src": "814:14:5"
+                    "src": "830:14:5"
                   }
                 ],
-                "id": 863,
+                "id": 807,
                 "name": "ParameterList",
-                "src": "813:16:5"
+                "src": "829:16:5"
               },
               {
                 "children": [
@@ -518,7 +518,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 867,
+                      "scope": 811,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -531,24 +531,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 864,
+                        "id": 808,
                         "name": "ElementaryTypeName",
-                        "src": "853:7:5"
+                        "src": "869:7:5"
                       }
                     ],
-                    "id": 865,
+                    "id": 809,
                     "name": "VariableDeclaration",
-                    "src": "853:7:5"
+                    "src": "869:7:5"
                   }
                 ],
-                "id": 866,
+                "id": 810,
                 "name": "ParameterList",
-                "src": "852:9:5"
+                "src": "868:9:5"
               }
             ],
-            "id": 867,
+            "id": 811,
             "name": "FunctionDefinition",
-            "src": "792:70:5"
+            "src": "808:70:5"
           },
           {
             "attributes": {
@@ -561,7 +561,7 @@
                 null
               ],
               "name": "tokenOfOwnerByIndex",
-              "scope": 877,
+              "scope": 821,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -573,7 +573,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_owner",
-                      "scope": 876,
+                      "scope": 820,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -587,20 +587,20 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 868,
+                        "id": 812,
                         "name": "ElementaryTypeName",
-                        "src": "1336:7:5"
+                        "src": "1361:7:5"
                       }
                     ],
-                    "id": 869,
+                    "id": 813,
                     "name": "VariableDeclaration",
-                    "src": "1336:14:5"
+                    "src": "1361:14:5"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "name": "_index",
-                      "scope": 876,
+                      "scope": 820,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -613,19 +613,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 870,
+                        "id": 814,
                         "name": "ElementaryTypeName",
-                        "src": "1352:7:5"
+                        "src": "1377:7:5"
                       }
                     ],
-                    "id": 871,
+                    "id": 815,
                     "name": "VariableDeclaration",
-                    "src": "1352:14:5"
+                    "src": "1377:14:5"
                   }
                 ],
-                "id": 872,
+                "id": 816,
                 "name": "ParameterList",
-                "src": "1335:32:5"
+                "src": "1360:32:5"
               },
               {
                 "children": [
@@ -633,7 +633,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 876,
+                      "scope": 820,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -646,42 +646,42 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 873,
+                        "id": 817,
                         "name": "ElementaryTypeName",
-                        "src": "1391:7:5"
+                        "src": "1416:7:5"
                       }
                     ],
-                    "id": 874,
+                    "id": 818,
                     "name": "VariableDeclaration",
-                    "src": "1391:7:5"
+                    "src": "1416:7:5"
                   }
                 ],
-                "id": 875,
+                "id": 819,
                 "name": "ParameterList",
-                "src": "1390:9:5"
+                "src": "1415:9:5"
               }
             ],
-            "id": 876,
+            "id": 820,
             "name": "FunctionDefinition",
-            "src": "1307:93:5"
+            "src": "1332:93:5"
           }
         ],
-        "id": 877,
+        "id": 821,
         "name": "ContractDefinition",
-        "src": "224:1178:5"
+        "src": "229:1199:5"
       }
     ],
-    "id": 878,
+    "id": 822,
     "name": "SourceUnit",
-    "src": "0:1402:5"
+    "src": "0:1428:5"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-04-06T15:59:13.042Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-05-06T16:38:45.555Z",
   "devdoc": {
     "details": "See https://eips.ethereum.org/EIPS/eip-721  Note: the ERC-165 identifier for this interface is 0x780e9d63.",
     "methods": {

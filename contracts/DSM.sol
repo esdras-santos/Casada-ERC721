@@ -90,8 +90,8 @@ contract DSM is IERC721, ERC721Receiver, ERC721Metadata, IERC165 /*ERC721Enumera
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes memory _data) public{
         require(_isApprovedOrOwner(msg.sender,_tokenId), "not the owner or approved");
-        _transfer(_from, _to, _tokenId);
         require(_checkOnERC721Received(_from,_to, _tokenId, _data));
+        _transfer(_from, _to, _tokenId);  
     }
 
 
@@ -100,7 +100,7 @@ contract DSM is IERC721, ERC721Receiver, ERC721Metadata, IERC165 /*ERC721Enumera
     }
 
     function _transfer(address _from, address _to, uint256 _tokenId) internal{
-        address owner = ownerOf(_tokenId);
+        address owner = _owner[_tokenId];
         require(owner == _from);
         require(_to != address(0));
         _approvedAddress[_tokenId] = address(0);
@@ -111,9 +111,9 @@ contract DSM is IERC721, ERC721Receiver, ERC721Metadata, IERC165 /*ERC721Enumera
     }
 
     function _isApprovedOrOwner(address _spender, uint256 _tokenId) internal view returns (bool) {
-        address owner = ownerOf(_tokenId);
+        address owner = _owner[_tokenId];
         require(owner != address(0));
-        return (_spender == owner || isApprovedForAll(owner, msg.sender) == true || getApproved(_tokenId) == msg.sender);
+        return (_spender == owner || _authorizedOperator[owner][msg.sender] == true || _approvedAddress[_tokenId] == msg.sender);
     }
 
     function transferFrom(address _from, address _to, uint256 _tokenId) public{
@@ -122,9 +122,9 @@ contract DSM is IERC721, ERC721Receiver, ERC721Metadata, IERC165 /*ERC721Enumera
 
     function approve(address _approved, uint256 _tokenId) public{
         require(_approved != address(0));
-        require(ownerOf(_tokenId) == msg.sender || isApprovedForAll(msg.sender, _approved) == true);
+        require(_owner[_tokenId] == msg.sender || _authorizedOperator[msg.sender][_approved] == true);
         _approvedAddress[_tokenId] = _approved;
-        emit Approval(ownerOf(_tokenId), _approved, _tokenId);
+        emit Approval(_owner[_tokenId], _approved, _tokenId);
 
     }
 
@@ -141,7 +141,7 @@ contract DSM is IERC721, ERC721Receiver, ERC721Metadata, IERC165 /*ERC721Enumera
     }
 
     function getApproved(uint256 _tokenId) public view returns (address){
-        require(ownerOf(_tokenId) != address(0));
+        require(_owner[_tokenId] != address(0));
         return _approvedAddress[_tokenId];
     }
 
